@@ -1,6 +1,7 @@
 // gulp modules
 const gulp                    = require('gulp')
 const gulpMinifyHTML          = require('gulp-minify-html')
+var errorNotifier = require('gulp-error-notifier');
 
 // webpack modules
 const webpack                 = require('webpack')
@@ -47,7 +48,7 @@ gulp.task("dev-server", () => {
   });
 });
 
-/* 
+/*
  * Production tasks
  */
 
