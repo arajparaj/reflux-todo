@@ -2,10 +2,8 @@
   "name": "react-reflux-boilerplate",
   "version": "0.0.4",
   "description": "React Reflux Boilerplate",
-  "homepage": "https://github.com/xuqingkuang/react-reflux-boilerplate",
   "author": {
-    "name": "XQ Kuang",
-    "email": "xuqingkuang@qq.com"
+    "name": "Araj P Raju"
   },
   "keywords": [
     "react",
@@ -17,10 +15,6 @@
     "express"
   ],
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/xuqingkuang/react-reflux-boilerplate"
-  },
   "dependencies": {
     "babel-core": "^6.1.4",
     "babel-loader": "^6.1.0",
@@ -30,7 +24,7 @@
     "react": "^0.14.2",
     "react-dom": "^0.14.2",
     "react-router": "^2.0.0-rc5",
-    "reflux": "^0.3.0",
+    "reflux": "^0.4.0",
     "webpack": "^1.12.4",
     "webpack-hot-middleware": "^2.5.0"
   },
@@ -45,6 +39,7 @@
     "express": "^4.13.3",
     "file-loader": "^0.8.4",
     "gulp": "^3.9.0",
+    "gulp-error-notifier": "^1.1.0",
     "gulp-minify-html": "^1.0.4",
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.1",
