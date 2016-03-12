@@ -4,15 +4,31 @@ import TODOActions from '../actions/todo.action';
 var TODOStore = Reflux.createStore({
   listenables: TODOActions,
 
-  onLoad(){
+  TODOList: [
+    {
+      key: 1,
+      label: "nothing"
+    },
+    {
+      key: 2,
+      label: "nothing"
+    },
+    {
+      key: 3,
+      label: "nothing"
+    }
+  ],
+
+  onLoad() {
     console.log("started");
-  }
+    this.trigger(this.TODOList);
+  },
   onLoadCompleted() {
     console.log("completed");
-  }
+  },
   onLoadfailed() {
     console.log("failed");;
   }
 });
 
-export TODOStore;
+export default TODOStore;

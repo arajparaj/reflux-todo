@@ -1,7 +1,9 @@
 import Reflux from 'reflux';
 
 var TODOActions = Reflux.createActions({
-    "load": {children: ["completed","failed"]}
+  "load": {
+    children: ["completed", "failed"]
+  }
 });
 
-export TODOActions;
+export default TODOActions;

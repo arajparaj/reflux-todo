@@ -3,8 +3,11 @@ import TODO from './todo.jsx';
 
 class TODOList extends React.Component {
   render() {
+    let list = this.props.TODOList.map((item,index) => <TODO key={index} item={item}/>);
     return (
-      <TODO/>
+      <div>
+        {list}
+      </div>
     );
   }
 }

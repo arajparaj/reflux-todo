@@ -1,12 +1,12 @@
 import React from 'react';
-import {Router, Route, IndexRoute} from 'react-router';
-import createBrowserHistory from 'history/lib/createBrowserHistory'
+import {Router, Route, IndexRoute, useRouterHistory} from 'react-router';
+import createHashHistory from 'history/lib/createHashHistory';
 
 import Layout from './layout/layout';
 import NotFoundPage from './pages/not-found';
 import HomePage from './pages/home'
 
-let history = createBrowserHistory()
+const history = useRouterHistory(createHashHistory)({ queryKey: false });
 
 const routes = (
   <Router history={history}>

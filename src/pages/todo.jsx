@@ -1,9 +1,9 @@
-import React, { PropTypes } from 'react'
+import React, {PropTypes} from 'react'
 
 class TODO extends React.Component {
-  render () {
-    return(
-      <div>todo</div>
+  render() {
+    return (
+      <div>{this.props.item.key}</div>
     );
   }
 }
