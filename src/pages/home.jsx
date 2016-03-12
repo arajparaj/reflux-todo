@@ -1,11 +1,9 @@
-import React, {PropTypes} from 'react'
-import Reflux from 'reflux';
+import React, {PropTypes} from 'react';
+import TODOList from './todo.list.jsx';
 
 class Home extends React.Component {
   render() {
-    return (
-      <div>Hello World</div>
-    );
+    return (<TODOList/>);
   }
 }
 
