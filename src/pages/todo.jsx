@@ -21,12 +21,10 @@ class TODO extends React.Component {
     TODOActions.destroy(this.props.item.key);
   }
   handleBlur() {
-    this.setState({
-      isEditing:false
-    });
+    this.setState({isEditing: false});
   }
   handleValueChange(event) {
-    TODOActions.save(this.props.item.key,event.target.value);
+    TODOActions.save(this.props.item.key, event.target.value);
   }
 
   render() {
