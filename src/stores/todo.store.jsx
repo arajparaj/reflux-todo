@@ -1,5 +1,6 @@
 import Reflux from 'reflux';
 import TODOActions from '../actions/todo.action';
+import _ from 'lodash';
 
 var TODOStore = Reflux.createStore({
   listenables: TODOActions,
@@ -31,7 +32,22 @@ var TODOStore = Reflux.createStore({
   },
   onLoadfailed() {
     console.log("failed");;
+  },
+  onToggle(key){
+    let index = _.findIndex(this.TODOList, ['key', key]);
+    this.TODOList[index].isCompleted = !this.TODOList[index].isCompleted;
+    this.trigger(this.TODOList);
+  },
+  onDestroy(key){
+    _.remove(this.TODOList, ['key', key]);
+    this.trigger(this.TODOList);
+  },
+  onSave(key,value){
+    let index = _.findIndex(this.TODOList, ['key', key]);
+    this.TODOList[index].label = value;
+    this.trigger(this.TODOList);
   }
+
 });
 
 export default TODOStore;
