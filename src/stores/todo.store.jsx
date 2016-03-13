@@ -7,15 +7,18 @@ var TODOStore = Reflux.createStore({
   TODOList: [
     {
       key: 1,
-      label: "nothing"
+      label: "label 1",
+      isCompleted: false
     },
     {
       key: 2,
-      label: "nothing"
+      label: "label 2",
+      isCompleted: false
     },
     {
       key: 3,
-      label: "nothing"
+      label: "label 3",
+      isCompleted: false
     }
   ],
 

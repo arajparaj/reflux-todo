@@ -37,9 +37,10 @@ gulp.task("dev-server", () => {
     publicPath: webpackConfig.output.publicPath
   }));
   app.use(webpackHotMiddleware(devCompiler));
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(path.join(__dirname, 'assets/index.html')))
-  });
+  app.use(express.static(__dirname + '/public'));
+  // app.get('*', (req, res) => {
+  //   res.sendFile(path.join(path.join(__dirname, 'assets/index.html')))
+  // });
   app.listen(config.port, config.host, (err) => {
     if (err) {
       return console.error(err);
