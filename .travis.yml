@@ -3,6 +3,9 @@ node_js: 5
 before_script:
 - npm install -g gulp
 script: gulp production
+cache:
+  directories:
+    - ./node_modules
 deploy:
   provider: heroku
   api_key:
