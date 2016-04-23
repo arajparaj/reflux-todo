@@ -30,14 +30,27 @@ class TODO extends React.Component {
   render() {
     return (
       <li className={classNames({
-        'completed': this.props.item.isCompleted
-      }, {'editing': this.state.isEditing})}>
+          'completed': this.props.item.isCompleted
+        }, {'editing': this.state.isEditing})}>
         <div className="view">
-          <input className="toggle" type="checkbox" checked={this.props.item.isCompleted} onChange={this.handleToggle.bind(this)}/>
-          <label onDoubleClick={this.handleEditStart.bind(this)}>{this.props.item.label}</label>
-          <button className="destroy" onClick={this.handleDestroy.bind(this)}/>
+          <input
+            className="toggle"
+            type="checkbox"
+            checked={this.props.item.isCompleted}
+            onChange={this.handleToggle.bind(this)}/>
+          <label onDoubleClick={this.handleEditStart.bind(this)}>
+            {this.props.item.label}
+          </label>
+          <button
+            className="destroy"
+            onClick={this.handleDestroy.bind(this)}/>
         </div>
-        <input ref="editInput" className="edit" onChange={this.handleValueChange.bind(this)} value={this.props.item.label} onBlur={this.handleBlur.bind(this)}/>
+        <input
+          ref="editInput"
+          className="edit"
+          onChange={this.handleValueChange.bind(this)}
+          value={this.props.item.label}
+          onBlur={this.handleBlur.bind(this)}/>
       </li>
     );
   }

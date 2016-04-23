@@ -1,5 +1,5 @@
 import React from 'react';
-import {Router, Route, IndexRoute, useRouterHistory} from 'react-router';
+import {Router, Route, IndexRedirect, useRouterHistory} from 'react-router';
 import createHashHistory from 'history/lib/createHashHistory';
 
 import Layout from './layout/layout';
@@ -11,7 +11,10 @@ const history = useRouterHistory(createHashHistory)({ queryKey: false });
 const routes = (
   <Router history={history}>
     <Route path='/' component={Layout}>
-      <IndexRoute component={HomePage}/>
+      <IndexRedirect to='All'/>
+      <Route path='All' component={HomePage}/>
+      <Route path='completed' component={HomePage}/>
+      <Route path='active' component={HomePage}/>
     </Route>
     <Route path="*" component={NotFoundPage}/>
   </Router>

@@ -2,6 +2,8 @@ import React, {PropTypes} from 'react';
 import TODOList from './todo.list.jsx';
 import TODOActions from '../actions/todo.action';
 import TODOStore from '../stores/todo.store';
+import Footer from './todo.footer.jsx';
+import Header  from './todo.footer.jsx';
 
 class Home extends React.Component {
 
@@ -22,7 +24,13 @@ class Home extends React.Component {
     this.unsubscribe();
   }
   render() {
-    return (<TODOList TODOList={this.state.TODOList}/>);
+    return (
+      <div>
+      <Header/>
+      <TODOList TODOList={this.state.TODOList}/>
+      <Footer list={this.state.TODOList}/>
+      </div>
+    );
   }
 }
 
