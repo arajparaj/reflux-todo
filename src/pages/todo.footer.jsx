@@ -5,7 +5,6 @@ import TODOActions from '../actions/todo.action';
 
 class Footer extends React.Component {
   render() {
-    console.log(this);
     var nbrcompleted = _.filter(this.props.list, "isComplete").length,
       nbrtotal = this.props.list.length,
       nbrincomplete = nbrtotal - nbrcompleted,

@@ -1,9 +1,11 @@
 import React, {PropTypes} from 'react';
+import _ from 'lodash';
+
 import TODOList from './todo.list.jsx';
 import TODOActions from '../actions/todo.action';
 import TODOStore from '../stores/todo.store';
 import Footer from './todo.footer.jsx';
-import Header  from './todo.footer.jsx';
+import Header from './todo.footer.jsx';
 
 class Home extends React.Component {
 
@@ -24,11 +26,28 @@ class Home extends React.Component {
     this.unsubscribe();
   }
   render() {
+    let filteredList;
+    switch (this.props.location.pathname) {
+      case '/Completed':
+        console.log('inside');
+        filteredList = _.filter(this.state.TODOList, function(item) {
+          return item.isCompleted;
+        });
+        break;
+      case '/Active':
+        filteredList = _.filter(this.state.TODOList, function(item) {
+          return !item.isCompleted;
+        });
+        break;
+      default:
+        filteredList = this.state.TODOList;
+    }
+    console.log(filteredList);
     return (
       <div>
-      <Header/>
-      <TODOList TODOList={this.state.TODOList}/>
-      <Footer list={this.state.TODOList}/>
+        <Header/>
+        <TODOList TODOList={filteredList}/>
+        <Footer list={this.state.TODOList}/>
       </div>
     );
   }
